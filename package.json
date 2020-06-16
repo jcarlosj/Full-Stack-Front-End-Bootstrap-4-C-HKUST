@@ -1,0 +1,16 @@
+{
+  "name": "confusion",
+  "version": "1.0.0",
+  "description": "This is a website for Ristorante Con Fusion",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "lite": "lite-server"
+  },
+  "author": "Juan Crlos Jiménez Gutiérrez <jcjimenez29@misena.edu.co>",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
