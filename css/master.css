@@ -10,6 +10,16 @@
     padding: 50px 0;
 }
 
+.row-about-us hr {
+    border-bottom: 1px solid #D1C4E9;
+}
+.row-our-history {
+    padding: 100px 0;
+}
+.row-corporate-leadership {
+    padding: 50px 0;
+}
+
 .footer {
     background-color: #D1C4E9;
     margin: 0 auto;
