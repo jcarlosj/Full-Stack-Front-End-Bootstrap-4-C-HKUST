@@ -65,7 +65,14 @@
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <img src="./img/logo.png" class="img-fluid">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="./img/logo.png" class="img-fluid">
+                        </div>
+                        <div class="col-6 align-self-center">
+                            <a href="#reserveform" class="btn btn-warning btn-block">Reserve Table</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -115,6 +122,83 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <span id="reserveform"></span>
+
+        <div class="row row-content align-items-center justify-content-center mt-3">
+
+            <div class="col-12 col-md-8">
+
+                <div class="card">
+                    <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
+                    <div class="card-body">
+                        <form>
+                            <div class="row form-group">
+                                <label for="numberguests" class="col-md-2 col-form-label">Number of Guest</label>
+                                <div class="col-md-10">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="numberguests" id="numberguests-1" value="1">
+                                        <label class="form-check-label" for="numberguests-1">
+                                            1
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="numberguests" id="numberguests-2" value="2">
+                                        <label class="form-check-label" for="numberguests-2">
+                                            2
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="numberguests" id="numberguests-3" value="3">
+                                        <label class="form-check-label" for="numberguests-3">
+                                            3
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="numberguests" id="numberguests-4" value="4">
+                                        <label class="form-check-label" for="numberguests-4">
+                                            4
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="numberguests" id="numberguests-5" value="5">
+                                        <label class="form-check-label" for="numberguests-5">
+                                            5
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="numberguests" id="numberguests-6" value="6">
+                                        <label class="form-check-label" for="numberguests-6">
+                                            6
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label for="date" class="col-md-2 col-form-label">Date and Time</label>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="date" class="form-control" id="date" name="date" placeholder="Date" />
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="time" class="form-control" id="time" name="time" placeholder="Time" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-6 offset-md-2">
+                                    <button class="btn btn-primary" type="submit">Reserve</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+
         </div>
     </main>
 
