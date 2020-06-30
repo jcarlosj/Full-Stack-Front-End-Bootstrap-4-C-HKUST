@@ -51,3 +51,11 @@ body {
 .navbar-brand {
     padding-left: .8rem;   
 }
+
+/** Tab Navigation */
+.tab-content {
+    border-bottom: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    padding: 18px 14px;
+}
