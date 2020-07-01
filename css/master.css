@@ -63,3 +63,16 @@ body {
     border-right: 1px solid #DDD;
     padding: 18px 14px;
 }
+
+.carousel {
+    background-color: #512DA8;
+}
+.carousel-item {
+    height: 240px;
+}
+.carousel-item img {
+    min-height: 240px;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
