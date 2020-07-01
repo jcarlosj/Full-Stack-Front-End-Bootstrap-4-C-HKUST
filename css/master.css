@@ -44,6 +44,10 @@ body {
     margin: 0;
 }
 
+#navbar-mainbar {
+    justify-content: space-between;
+}
+
 .navbar-dark {
     background-color: #512DA8;
     color: white;
