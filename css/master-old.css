@@ -1,0 +1,85 @@
+body {
+    padding: 50px 0 0 0;
+    z-index: 0;
+}
+
+.row-header {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.row-content { 
+    border-bottom: 1px solid #D1C4E9;
+    margin: 0 auto;
+    /* min-height: 400px; */
+    padding: 50px 0;
+}
+
+.row-about-us hr {
+    border-bottom: 1px solid #D1C4E9;
+}
+.row-our-history {
+    padding: 100px 0;
+}
+.row-corporate-leadership {
+    padding: 50px 0;
+}
+
+.footer {
+    background-color: #D1C4E9;
+    margin: 0 auto;
+    padding: 20px auto;
+}
+
+.jumbotron {
+    background-color: #9575CD;
+    color: floralwhite;
+    margin: 0 auto;
+    padding: 70px 30px;
+}
+
+.address {
+    color: #0F0F0F;
+    font-size: 80%;
+    margin: 0;
+}
+
+#navbar-mainbar {
+    justify-content: space-between;
+}
+
+.navbar-dark {
+    background-color: #512DA8;
+    color: white;
+}
+.navbar-brand {
+    padding-left: .8rem;   
+}
+
+/** Tab Navigation */
+.tab-content {
+    border-bottom: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    padding: 18px 14px;
+}
+
+.carousel {
+    background-color: #512DA8;
+}
+.carousel-item {
+    height: 240px;
+}
+.carousel-item img {
+    min-height: 240px;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+#carousel-button {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 10;
+}
