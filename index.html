@@ -126,8 +126,6 @@
                         <div class="col-6 align-self-center">
                             <a href="#reserveform" 
                                 class="btn btn-warning btn-block" 
-                                data-toggle="modal"
-                                data-target="#reserveModal"
                             >Reserve Table</a>
                         </div>
                     </div>
@@ -396,40 +394,90 @@
     <script>
         /** jQuery & JavaScript Code */
         $( function() {
-            /** Login */
+            
             let 
                 homePageURL = `http://localhost:3000`,
                 bodyEl = $( 'body' ),
+                /** Login */
                 btnLogin = $( '.fa-sign-in' ) .parent(),
                 loginModal = $( '#loginModal' ),
-                loginModalButtons = loginModal .find( 'button' );
+                loginModalButtons = loginModal .find( 'button' ),
+                /** Reserve */
+                anchorReserve = $( 'a[href="#reserveform"]' ),
+                reserveModal = $( '#reserveModal' ),
+                reserveModalButtons = reserveModal .find( 'button' ); 
 
+            /** Login Launch Button  */
             btnLogin .on( 'click', () => {
+                showDarkBackground();
+                openLoginModal();
+            });
+            /** Reserve Launch Anchor  */
+            anchorReserve .on( 'click', () => {
+                showDarkBackground();
+                openReserveModal();
+            });
+
+            /** Login Open Modal */
+            function openLoginModal() {
+                loginModal .addClass( 'show' );
+                loginModal .css({ 'padding-right': '14px', 'display': 'block' });
+            }
+            /** Reserve Open Modal */
+            function openReserveModal() {          
+                reserveModal .addClass( 'show' );
+                reserveModal .css({ 'padding-right': '14px', 'display': 'block' });
+            }
+
+            /** Login Close Modal */
+            function closeLoginModal () {
+                hideDarkBackground();
+                loginModal .removeClass( 'show' );
+                loginModal .css({ 'padding-right': '', 'display': 'none' });
+            }
+            /** Reserve Close Modal */
+            function closeReserveModal () {
+                hideDarkBackground();
+                reserveModal .removeClass( 'show' );
+                reserveModal .css({ 'padding-right': '', 'display': 'none' });
+            }
+            /** Show dark background */
+            function showDarkBackground() {
                 bodyEl .addClass( 'modal-open' );
                 bodyEl .css( 'padding-right', '14px' );
                 bodyEl .append( '<div class="modal-backdrop fade show"></div>' );
-                loginModal .addClass( 'show' );
-                loginModal .css({ 'padding-right': '14px', 'display': 'block' });
-            });
-
-            function closeLoginModal () {
-                let modalBackdropEl = bodyEl .hasClass( 'modal-backdrop' );
-
+            }
+            /** Hide dark background */
+            function hideDarkBackground() {
+                bodyEl .children() .last() .remove();
                 bodyEl .removeClass( 'modal-open' );
                 bodyEl .css( 'padding-right', '' );
-                bodyEl .children() .last() .remove();
-
-                loginModal .removeClass( 'show' );
-                loginModal .css({ 'padding-right': '', 'display': 'none' });
-
-                console .log( `With this button hide the modal window` );
             }
 
+            /** Login launch modal buttons */
             loginModalButtons .each( function() {
 
                 if( $( this ) .hasClass( 'close' ) || $( this ) .hasClass( 'btn-secondary' ) ) {
                     $( this ) .on( 'click', () => {
                         closeLoginModal();
+                    });
+                }
+                if( $( this ) .hasClass( 'btn-primary' ) ) {
+                    $( this ) .on( 'click', () => {
+                        console .log( `Data sent` );
+                        
+                        $( location ) .attr( 'href', homePageURL );
+                    });
+                }
+
+            });
+            console .log( reserveModalButtons );
+            /** Reserve launch modal buttons */
+            reserveModalButtons .each( function() {
+
+                if( $( this ) .hasClass( 'close' ) || $( this ) .hasClass( 'btn-secondary' ) ) {
+                    $( this ) .on( 'click', () => {
+                        closeReserveModal();
                     });
                 }
                 if( $( this ) .hasClass( 'btn-primary' ) ) {
