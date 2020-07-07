@@ -1,0 +1,82 @@
+/** Compiled with File Sass */
+// Variables
+$ln-gray: #DDD;
+$ln-pale: #D1C4E9;
+$bg-dark: #512DA8;
+$bg-light: #9575CD;
+$bg-pale: $ln-pale;
+
+$carousel-item-height: 240px;
+
+// Mixings
+@mixin zero-margin( $p-up-down: 0, $p-left-right: 0 ) {
+    margin: 0 auto;
+    padding: $p-up-down $p-left-right;
+}
+
+// Common classes
+body {
+    padding: 50px 0 0 0;
+    z-index: 0;
+}
+
+address {
+    color:#0F0F0F;
+    font-size: 80%;
+    margin: 0;
+}
+
+.row-header {
+    @include zero-margin();             // Call Mixing
+}
+.row-content {
+    @include zero-margin( 50px, 0 );    // Call Mixing
+    border-bottom: 1px solid $ln-pale;
+    /* min-height: 400px; */
+}
+.footer {
+    @include zero-margin( 20px, 0 );   // Call Mixing
+    background-color: $bg-pale;
+}
+
+.navbar-dark {
+    background-color: $bg-dark;
+}
+#navbar-mainbar {
+    justify-content: space-between;
+}
+
+.jumbotron {
+    @include zero-margin( 70px, 30px ); // Call Mixing
+    background-color: $bg-light;
+    color: floralwhite;
+}
+
+.tab-content {
+    border-bottom: 1px solid $ln-gray;
+    border-left: 1px solid $ln-gray;
+    border-right: 1px solid $ln-gray;
+    padding: 10px;
+}
+
+.carousel {
+    background: $bg-dark;
+
+    .carousel-item {
+        height: $carousel-item-height;
+
+        img {
+            left: 0;
+            min-height: $carousel-item-height;
+            position: absolute;
+            top: 0;
+        }
+    }
+
+    #carousel-button {
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: 10;
+    }
+}

@@ -5,11 +5,14 @@
   "main": "index.html",
   "scripts": {
     "start": "npm run lite",
-    "lite": "lite-server"
+    "lite": "lite-server",
+    "scss": "node-sass -o ./css/ ./css/"
   },
   "author": "Juan Crlos Jiménez Gutiérrez <jcjimenez29@misena.edu.co>",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
     "bootstrap": "^4.5.0",
