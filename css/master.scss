@@ -1,5 +1,6 @@
 /** Compiled with File Sass */
 // Variables
+$modal-title-color: floralwhite;
 $ln-gray: #DDD;
 $ln-pale: #D1C4E9;
 $bg-dark: #512DA8;
@@ -78,5 +79,23 @@ address {
         right: 0;
         position: absolute;
         z-index: 10;
+    }
+}
+
+.modal {
+    &-header {
+        background-color: $bg-dark;
+        border-bottom: none;
+    }
+    &-title,
+    .close,
+    .btn {
+        color: $modal-title-color;
+        font-weight: bold;
+    }
+    &-body,
+    &-footer {
+        background-color: $bg-pale;
+        border-top: none;
     }
 }

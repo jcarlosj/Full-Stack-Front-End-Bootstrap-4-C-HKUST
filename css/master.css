@@ -55,3 +55,17 @@ address {
     right: 0;
     position: absolute;
     z-index: 10; }
+
+.modal-header {
+  background-color: #512DA8;
+  border-bottom: none; }
+
+.modal-title,
+.modal .close,
+.modal .btn {
+  color: floralwhite;
+  font-weight: bold; }
+
+.modal-body, .modal-footer {
+  background-color: #D1C4E9;
+  border-top: none; }
