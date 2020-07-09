@@ -409,57 +409,19 @@
 
             /** Login Launch Button  */
             btnLogin .on( 'click', () => {
-                showDarkBackground();
-                openLoginModal();
+                loginModal .modal( 'show' );
             });
             /** Reserve Launch Anchor  */
             anchorReserve .on( 'click', () => {
-                showDarkBackground();
-                openReserveModal();
+                reserveModal .modal( 'show' );
             });
-
-            /** Login Open Modal */
-            function openLoginModal() {
-                loginModal .addClass( 'show' );
-                loginModal .css({ 'padding-right': '14px', 'display': 'block' });
-            }
-            /** Reserve Open Modal */
-            function openReserveModal() {          
-                reserveModal .addClass( 'show' );
-                reserveModal .css({ 'padding-right': '14px', 'display': 'block' });
-            }
-
-            /** Login Close Modal */
-            function closeLoginModal () {
-                hideDarkBackground();
-                loginModal .removeClass( 'show' );
-                loginModal .css({ 'padding-right': '', 'display': 'none' });
-            }
-            /** Reserve Close Modal */
-            function closeReserveModal () {
-                hideDarkBackground();
-                reserveModal .removeClass( 'show' );
-                reserveModal .css({ 'padding-right': '', 'display': 'none' });
-            }
-            /** Show dark background */
-            function showDarkBackground() {
-                bodyEl .addClass( 'modal-open' );
-                bodyEl .css( 'padding-right', '14px' );
-                bodyEl .append( '<div class="modal-backdrop fade show"></div>' );
-            }
-            /** Hide dark background */
-            function hideDarkBackground() {
-                bodyEl .children() .last() .remove();
-                bodyEl .removeClass( 'modal-open' );
-                bodyEl .css( 'padding-right', '' );
-            }
 
             /** Login launch modal buttons */
             loginModalButtons .each( function() {
 
                 if( $( this ) .hasClass( 'close' ) || $( this ) .hasClass( 'btn-secondary' ) ) {
                     $( this ) .on( 'click', () => {
-                        closeLoginModal();
+                        loginModal .modal( 'hide' );
                     });
                 }
                 if( $( this ) .hasClass( 'btn-primary' ) ) {
@@ -471,13 +433,13 @@
                 }
 
             });
-            console .log( reserveModalButtons );
+            
             /** Reserve launch modal buttons */
             reserveModalButtons .each( function() {
 
                 if( $( this ) .hasClass( 'close' ) || $( this ) .hasClass( 'btn-secondary' ) ) {
                     $( this ) .on( 'click', () => {
-                        closeReserveModal();
+                        reserveModal .modal( 'hide' );
                     });
                 }
                 if( $( this ) .hasClass( 'btn-primary' ) ) {
