@@ -4,21 +4,25 @@
   "description": "This is a website for Ristorante Con Fusion",
   "main": "index.html",
   "scripts": {
-    "start": "npm run lite",
+    "start": "npm run watch:all",
     "lite": "lite-server",
-    "scss": "node-sass -o ./css/ ./css/"
+    "scss": "node-sass -o ./css/ ./css/",
+    "watch:scss": "onchange './css/*.scss' -- npm run scss",
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"
   },
-  "author": "Juan Crlos Jiménez Gutiérrez <jcjimenez29@misena.edu.co>",
+  "author": "Juan Carlos Jiménez Gutiérrez <jcjimenez29@misena.edu.co>",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "lite-server": "^2.5.4",
+    "node-sass": "^4.14.1",
+    "onchange": "^7.0.2",
+    "parallelshell": "^3.0.2"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
     "bootstrap": "^4.5.0",
     "bootstrap-social": "^5.1.1",
     "jquery": "^3.5.1",
-    "lite-server": "^2.5.4",
     "popper.js": "^1.16.0"
   }
 }
