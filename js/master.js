@@ -2,7 +2,7 @@
 $( function() {
             
     let 
-        homePageURL = `http://localhost:3000`,
+        homePageURL = 'http://localhost:3000',
         bodyEl = $( 'body' ),
         /** Login */
         btnLogin = $( '.fa-sign-in' ) .parent(),
@@ -14,11 +14,11 @@ $( function() {
         reserveModalButtons = reserveModal .find( 'button' ); 
 
     /** Login Launch Button  */
-    btnLogin .on( 'click', () => {
+    btnLogin .on( 'click', function() {
         loginModal .modal( 'show' );
     });
     /** Reserve Launch Anchor  */
-    anchorReserve .on( 'click', () => {
+    anchorReserve .on( 'click', function() {
         reserveModal .modal( 'show' );
     });
 
@@ -26,13 +26,13 @@ $( function() {
     loginModalButtons .each( function() {
 
         if( $( this ) .hasClass( 'close' ) || $( this ) .hasClass( 'btn-secondary' ) ) {
-            $( this ) .on( 'click', () => {
+            $( this ) .on( 'click', function() {
                 loginModal .modal( 'hide' );
             });
         }
         if( $( this ) .hasClass( 'btn-primary' ) ) {
-            $( this ) .on( 'click', () => {
-                console .log( `Data sent` );
+            $( this ) .on( 'click', function() {
+                console .log( 'Data sent' );
                 
                 $( location ) .attr( 'href', homePageURL );
             });
@@ -44,13 +44,13 @@ $( function() {
     reserveModalButtons .each( function() {
 
         if( $( this ) .hasClass( 'close' ) || $( this ) .hasClass( 'btn-secondary' ) ) {
-            $( this ) .on( 'click', () => {
+            $( this ) .on( 'click', function() {
                 reserveModal .modal( 'hide' );
             });
         }
         if( $( this ) .hasClass( 'btn-primary' ) ) {
-            $( this ) .on( 'click', () => {
-                console .log( `Data sent` );
+            $( this ) .on( 'click', function() {
+                console .log( 'Data sent' );
                 
                 $( location ) .attr( 'href', homePageURL );
             });

@@ -9,11 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap - Styles:  -->
+    <!-- build:css ./css/modules.css -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./node_modules/bootstrap-social/bootstrap-social.css">
-    <link href="./css/master.css" rel="stylesheet">
+    <!-- endbuild -->
+    
+    <!-- Theme Styles -->
+    <!-- build:css ./css/styles.css -->
+    <link rel="stylesheet" href="./css/master.css">
+    <!-- endbuild -->
 </head>
 
 <body>
@@ -209,11 +215,18 @@
            </div>
         </div>
     </footer>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-    <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <!-- build:js ./js/modules.js -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- Scripts -->
+    <!-- build:js ./js/scripts.js -->
     <script src="./js/master.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>

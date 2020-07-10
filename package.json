@@ -9,21 +9,29 @@
     "scss": "node-sass -o ./css/ ./css/",
     "watch:scss": "onchange './css/*.scss' -- npm run scss",
     "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'",
-    "clean": "rimraf ./dist",
+    "clean": "rimraf ./dist && rimraf ./node_modules",
+    "clean:dist": "rimraf ./dist",
     "clean:modules": "rimraf ./node_modules",
     "copy:fonts": "copyfiles -f ./node_modules/font-awesome/fonts/* ./dist/fonts",
-    "build:images": "imagemin ./img/* --out-dir=./dist/img"
+    "build": "npm run clean:dist && npm run copy:fonts && npm run build:images && npm run build:html",
+    "build:images": "imagemin ./img/* --out-dir=./dist/img",
+    "build:html": "usemin aboutus.html -d dist --htmlmin -o ./dist/aboutus.html && usemin contactus.html -d dist --htmlmin -o ./dist/contactus.html && usemin index.html -d dist --htmlmin -o ./dist/index.html",
+    "build:modules": "npm install"
   },
   "author": "Juan Carlos Jiménez Gutiérrez <jcjimenez29@misena.edu.co>",
   "license": "ISC",
   "devDependencies": {
     "copyfiles": "^2.3.0",
+    "cssmin": "^0.4.3",
+    "htmlmin": "0.0.7",
     "imagemin-cli": "^6.0.0",
     "lite-server": "^2.5.4",
     "node-sass": "^4.14.1",
     "onchange": "^7.0.2",
     "parallelshell": "^3.0.2",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "uglify-js": "^2.4.11",
+    "usemin-cli": "^0.6.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
