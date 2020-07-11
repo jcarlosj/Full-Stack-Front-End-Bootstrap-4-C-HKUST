@@ -16,7 +16,7 @@ module .exports = function( grunt ) {
             },
         },
         /** Browser-sync module */
-        browserSync: {
+        browserSync: {                                              // Task
             dev: {
                 bdFiles: {
                     src: [
@@ -32,6 +32,27 @@ module .exports = function( grunt ) {
                     }
                 }
             }
+        },
+        /** Copy files and folders */
+        copy: {
+            main: {
+                files: [
+                    {   /** HTML Files */
+                        expand: true,                                   // Process a dynamic src-dest file mapping
+                        dot: true,                                      // Allows patterns that match file names that begin with a dot
+                        cwd: './',                                      // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
+                        src: [ '*.html' ],                              // Source
+                        dest: './dist'                                  // Destination
+                    },
+                    {   /** File Fonts */
+                        expand: true,                                   // Process a dynamic src-dest file mapping
+                        dot: true,                                      // Allows patterns that match file names that begin with a dot
+                        cwd: './node_modules/font-awesome/',             // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
+                        src: [ 'fonts/*.*' ],                         // Source
+                        dest: './dist'                                  // Destination
+                    }
+                ],
+            },
         },
         /** Convert Sass code to CSS */
         sass: {                                                     // Task
@@ -50,7 +71,8 @@ module .exports = function( grunt ) {
     /** Load the plugins that provides the tasks */
     grunt .loadNpmTasks( 'grunt-sass' );    
     grunt .loadNpmTasks( 'grunt-contrib-watch' );    
-    grunt .loadNpmTasks( 'grunt-browser-sync' );                    
+    grunt .loadNpmTasks( 'grunt-browser-sync' );   
+    grunt .loadNpmTasks( 'grunt-contrib-copy' );                 
 
     /** Register Tasks */
     grunt .registerTask( 'css', [ 'sass' ] );
