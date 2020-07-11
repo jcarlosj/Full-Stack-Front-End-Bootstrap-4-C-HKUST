@@ -40,10 +40,52 @@ module .exports = function( grunt ) {
         copy: {
             main: {
                 files: [
+                    {   /** Bootstrap CSS File */
+                        expand: true,                                   // Process a dynamic src-dest file mapping
+                        dot: true,                                      // Allows patterns that match file names that begin with a dot
+                        cwd: './node_modules/bootstrap/dist/',          // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
+                        src: [ 'css/bootstrap.min.css' ],               // Source
+                        dest: './src'                                   // Destination
+                    },
+                    {   /** FontAwesome CSS File */
+                        expand: true,                                   // Process a dynamic src-dest file mapping
+                        dot: true,                                      // Allows patterns that match file names that begin with a dot
+                        cwd: './node_modules/font-awesome/',            // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
+                        src: [ 'css/font-awesome.min.css' ],            // Source
+                        dest: './src'                                   // Destination
+                    },
+                    {   /** Bootstrap Social CSS File */
+                        expand: true,                                   // Process a dynamic src-dest file mapping
+                        dot: true,                                      // Allows patterns that match file names that begin with a dot
+                        cwd: './node_modules/bootstrap-social/',        // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
+                        src: [ 'bootstrap-social.css' ],                // Source
+                        dest: './src/css'                               // Destination
+                    },
+                    {   /** jQuery File */
+                        expand: true,                                   // Process a dynamic src-dest file mapping
+                        dot: true,                                      // Allows patterns that match file names that begin with a dot
+                        cwd: './node_modules/jquery/dist/',             // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
+                        src: [ 'jquery.min.js' ],                       // Source
+                        dest: './src/js'                                // Destination
+                    },
+                    {   /** Popper JS File */
+                        expand: true,                                   // Process a dynamic src-dest file mapping
+                        dot: true,                                      // Allows patterns that match file names that begin with a dot
+                        cwd: './node_modules/popper.js/dist/umd/',      // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
+                        src: [ 'popper.min.js' ],                       // Source
+                        dest: './src/js'                                // Destination
+                    },
+                    {   /** Bootstrap JS File */
+                        expand: true,                                   // Process a dynamic src-dest file mapping
+                        dot: true,                                      // Allows patterns that match file names that begin with a dot
+                        cwd: './node_modules/bootstrap/dist/',          // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
+                        src: [ 'js/bootstrap.min.js' ],                 // Source
+                        dest: './src'                                   // Destination
+                    },
                     {   /** HTML Files */
                         expand: true,                                   // Process a dynamic src-dest file mapping
                         dot: true,                                      // Allows patterns that match file names that begin with a dot
-                        cwd: './',                                      // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
+                        cwd: './src/',                                  // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
                         src: [ '*.html' ],                              // Source
                         dest: './dist'                                  // Destination
                     },
@@ -74,7 +116,7 @@ module .exports = function( grunt ) {
                     sourceMap: true,
                 },
                 files: {                                            // Dictionary of files
-                    './css/master.css': './css/master.scss'         // 'destination': 'source'
+                    './src/css/master.css': './src/css/master.scss' // 'destination': 'source'
                 }
             }
         },
@@ -84,16 +126,16 @@ module .exports = function( grunt ) {
                 files: [{
                     expand: true,                                   // Process a dynamic src-dest file mapping
                     dot: true,                                      // Allows patterns that match file names that begin with a dot
-                    cwd: './',                                      // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
-                    src: ['./img/*.{png,jpg,gif}'],                 // Source
-                    dest: './dist/'                                 // Destination
+                    cwd: './src/',                                  // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
+                    src: ['img/*.{png,jpg,gif}'],                   // Source
+                    dest: './dist'                                  // Destination
                 }]
             }
         },
         /** useminPrepare */
         useminPrepare: {
             foo: {
-                src: [ 'aboutus.html', 'contactus.html', 'index.html' ],
+                src: [ './src/aboutus.html', './src/contactus.html', './src/index.html' ],
                 dest: './dist'
             },
             options: {

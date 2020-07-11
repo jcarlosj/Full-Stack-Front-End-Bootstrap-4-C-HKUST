@@ -4,16 +4,15 @@
   "description": "This is a website for Ristorante Con Fusion",
   "main": "index.html",
   "scripts": {
-    "start": "npm run lite",
-    "lite": "lite-server",
+    "start": "npm run lite:dev",
+    "lite:dev": "lite-server --baseDir='./src' ",
+    "start:build": "lite-server --baseDir='./dist' --port=8000",
     "build": "grunt build",
     "prepare": "npm install"
   },
   "author": "Juan Carlos Jiménez Gutiérrez <jcjimenez29@misena.edu.co>",
   "license": "ISC",
   "devDependencies": {
-    "copyfiles": "^2.3.0",
-    "cssmin": "^0.4.3",
     "grunt": "^1.2.1",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-clean": "^2.0.0",
@@ -27,17 +26,10 @@
     "grunt-filerev": "^2.3.1",
     "grunt-sass": "^3.1.0",
     "grunt-usemin": "^3.1.1",
-    "htmlmin": "0.0.7",
-    "imagemin-cli": "^6.0.0",
     "jit-grunt": "^0.10.0",
     "lite-server": "^2.5.4",
     "node-sass": "^4.14.1",
-    "onchange": "^7.0.2",
-    "parallelshell": "^3.0.2",
-    "rimraf": "^3.0.2",
-    "time-grunt": "^2.0.0",
-    "uglify-js": "^2.4.11",
-    "usemin-cli": "^0.6.0"
+    "time-grunt": "^2.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
