@@ -74,6 +74,18 @@ module .exports = function( grunt ) {
                     './css/master.css': './css/master.scss'         // 'destination': 'source'
                 }
             }
+        },
+        /** Minify images */
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,                                   // Process a dynamic src-dest file mapping
+                    dot: true,                                      // Allows patterns that match file names that begin with a dot
+                    cwd: './',                                      // All src matches are relative to (but don't include) this path > *(Property enabled by the "expand" property)
+                    src: ['./img/*.{png,jpg,gif}'],                 // Source
+                    dest: './dist/'                                 // Destination
+                }]
+            }
         }
     });
 
@@ -82,10 +94,12 @@ module .exports = function( grunt ) {
     grunt .loadNpmTasks( 'grunt-contrib-watch' );    
     grunt .loadNpmTasks( 'grunt-browser-sync' );   
     grunt .loadNpmTasks( 'grunt-contrib-copy' );        
-    grunt .loadNpmTasks( 'grunt-contrib-clean' );         
+    grunt .loadNpmTasks( 'grunt-contrib-clean' );  
+    grunt .loadNpmTasks( 'grunt-contrib-imagemin' );         
 
     /** Register Tasks */
     grunt .registerTask( 'css', [ 'sass' ] );
+    grunt .registerTask( 'build', [ 'clean:build', 'copy', 'imagemin' ] );
 
     /** Default task(s). */ 
     grunt .registerTask( 'default', [ 'browserSync', 'watch' ] );
