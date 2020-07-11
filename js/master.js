@@ -1,7 +1,7 @@
 /** jQuery & JavaScript Code */
 $( function() {
             
-    let 
+    var 
         homePageURL = 'http://localhost:3000',
         bodyEl = $( 'body' ),
         /** Login */
