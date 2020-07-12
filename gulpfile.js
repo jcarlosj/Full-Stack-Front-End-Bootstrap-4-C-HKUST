@@ -5,7 +5,8 @@ var
     { src, dest, watch, series } = require( 'gulp' ),
     sass = require( 'gulp-sass' ),
     browserSync = require( 'browser-sync' ) .create(),
-    del = require( 'del' );
+    del = require( 'del' ),
+    imagemin = require( 'gulp-imagemin' );
 
 /** Tasks */
 function cleanDistTask( cb ) {
@@ -22,6 +23,17 @@ function copyFontsTask( cb ) {
 function copyFilesTask( cb ) {
     src( './src/*.html' )
         .pipe( dest( './dist' ) );
+    cb();
+}
+
+function compressImagesTask( cb ) {
+    src( './src/img/*' )
+        .pipe( imagemin({
+            interlaced: true,
+            progressive: true,
+            optimizationLevel: 5
+        }))
+        .pipe( dest( './dist/img') );
     cb();
 }
 
@@ -57,4 +69,3 @@ function browserSyncTask( cb ) {
 
 exports .default = series( browserSyncTask, sassWatchTask );
 exports .sass = sassTask;
-exports .copy = series( copyFontsTask, copyFilesTask );
