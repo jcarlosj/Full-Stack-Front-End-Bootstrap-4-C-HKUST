@@ -13,6 +13,7 @@
   "author": "Juan Carlos Jiménez Gutiérrez <jcjimenez29@misena.edu.co>",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "grunt": "^1.2.1",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-clean": "^2.0.0",

@@ -2,8 +2,9 @@
 
 /** Dependencies */
 var
-    { src, dest } = require( 'gulp' ),
-    sass = require( 'gulp-sass' );
+    { src, dest, watch, series } = require( 'gulp' ),
+    sass = require( 'gulp-sass' ),
+    browserSync = require( 'browser-sync' ) .create();
 
 /** Tasks */
 sass .compiler = require( 'node-sass' );
@@ -14,10 +15,27 @@ function sassTask( cb ) {
     cb();
 }
 
-function defaultTask( cb ) {
-    // place code for your default task here
+function sassWatchTask( cb ) {
+    watch( './src/css/*.scss', sassTask );
     cb();
 }
 
-exports .default = defaultTask;
+function browserSyncTask( cb ) {
+    var files = [
+        '*.html',
+        './src/css/*.css',
+        './src/js.*.js',
+        './src/img/*.{png,jpg,gif}'
+    ];
+
+    browserSync .init({
+        server: {
+            baseDir: './src/'
+        }
+    });
+
+    cb();
+}
+
+exports .default = series( browserSyncTask, sassWatchTask );
 exports .sass = sassTask;
