@@ -20,7 +20,7 @@
   "author": "Juan Carlos Jiménez Gutiérrez <jcjimenez29@misena.edu.co>",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "del": "^5.1.0",
     "grunt": "^1.2.1",
     "grunt-browser-sync": "^2.2.0",
